@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form method="post" name="tagForm">{% csrf_token %}
+    {{ form.as_p }}
+    <p>ダグ：
+        <select name="tags">
+            <option value="python">python</option>
+            <option value="Javascript">Javascript</option>
+            <option value="others">その他</option>
+        </select>
+    <script>
+        var tagValue = ""
+        var tagValue = document.getElementById("tags").value;
+    </script>
+        {{tagValue}}
+    </p>
+    <input type="submit" value="投稿">
+</form>
+{% endblock content %}
